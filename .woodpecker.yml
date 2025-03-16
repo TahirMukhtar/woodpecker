@@ -3,3 +3,13 @@ pipeline:
     image: alpine
     commands:
       - echo "Hello, Woodpecker!"
+
+  build:
+    image: golang:1.20
+    commands:
+      - go build -o myapp .
+
+  test:
+    image: golang:1.20
+    commands:
+      - go test ./...
